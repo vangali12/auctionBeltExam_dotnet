@@ -1,0 +1,9 @@
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\bin\Debug\netcoreapp1.1\beltexam.deps.json
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\bin\Debug\netcoreapp1.1\beltexam.runtimeconfig.json
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\bin\Debug\netcoreapp1.1\beltexam.runtimeconfig.dev.json
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\bin\Debug\netcoreapp1.1\beltexam.dll
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\bin\Debug\netcoreapp1.1\beltexam.pdb
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\obj\Debug\netcoreapp1.1\beltexam.csproj.CoreCompileInputs.cache
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\obj\Debug\netcoreapp1.1\beltexam.AssemblyInfo.cs
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\obj\Debug\netcoreapp1.1\beltexam.dll
+C:\Users\Alisa Marie\Desktop\DojoAssignments\netCore\aspNetCore\beltexam\obj\Debug\netcoreapp1.1\beltexam.pdb

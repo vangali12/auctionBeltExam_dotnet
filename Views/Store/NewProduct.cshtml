@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/Store/Products.css">
+    <title>Products</title>
+</head>
+<body>
+        <h1>Add a Product:</h1>
+        @model beltexam.Models.ProductViewModel
+        <form asp-controller="Store" asp-action="CreateProduct" method="post">
+
+            <p><span asp-validation-for="Name"></span></p>
+            <p><label asp-for="Name">Product Name:</label>
+            <input asp-for="Name"/></p>
+
+            <p><span asp-validation-for="Description"></span></p>
+            <p><label asp-for="Description">Description:</label></p>
+            <p><textarea cols="60" rows="4" asp-for="Description"/></textarea></p>
+            
+            <p><span asp-validation-for="Bid"></span></p>
+            <p><label asp-for="Bid">Initial Bid:</label>
+            <input asp-for="Bid"/></p>
+
+            <p><span asp-validation-for="End"></span></p>
+            <p><label asp-for="End">End Date:</label>
+            <input type="date" asp-for="End"/></p>
+
+            <button type="submit">Create</button>
+        </form>
+</body>
+</html>

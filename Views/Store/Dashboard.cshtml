@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/Store/Dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Hello @ViewBag.currentUser.FirstName @ViewBag.currentUser.LastName!</h1>
+    <h3>Current Auction Items:</h3>
+    <table class="table table-bordered">
+        <thead>
+            <th>Product</th>
+            <th>Seller</th>
+            <th>Top Bid</th>
+            <th>Time Remaining</th>
+            <th>Action</th>
+        </thead>
+        @foreach (var product in @ViewBag.AllProducts) {
+            <tr>
+                <td><a href="/product/@product.productid">@product.Name</a></td>
+                <td>@product.Seller.FirstName @product.Seller.LastName</td>
+                <td>$@product.Bid</td>
+                <td>@((@product.End - DateTime.Now).Days) Days</td>
+                @if (@product.Seller.userid == @ViewBag.currentUser.userid) {
+                    <td><a href="/deleteProduct/@product.productid">Delete</a></td>
+                } else {
+                    <td></td>
+                }
+            </tr>
+        }
+    </table>
+    <a href="/createProduct">Create Product</a>
+    <h3>Your Wallet: $@ViewBag.currentUser.Wallet</h3>
+    <h3>My Winning Bids:</h3>
+    @foreach (var winningBid in @ViewBag.BidsWon) {
+        <p><a href="/product/@winningBid.Product.productid">@winningBid.Product.Name</a> (Price: $@winningBid.Amount)</p>
+    }
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/Store/DisplayProduct.css">
+    <title>Product</title>
+</head>
+<body>
+    <h1>Product #@ViewBag.CurrentProduct.productid - @ViewBag.CurrentProduct.Name</h1>
+    <h3>@ViewBag.CurrentProduct.Description</h3>
+    
+    @if (@ViewBag.CurrentProduct.End > DateTime.Now) {
+        <p>Current Bid: $@ViewBag.CurrentProduct.Bid</p>
+        <p>@((ViewBag.CurrentProduct.End - DateTime.Now).Days) Days Remaining</p>
+    } else {
+        <p>Bidding is over on this item.</p>
+        <p>This item was purchased at $@ViewBag.CurrentProduct.Bid</p>
+    }
+    <p>Seller: @ViewBag.CurrentProduct.Seller.FirstName @ViewBag.CurrentProduct.Seller.LastName</p>
+    @if (@ViewBag.CurrentProduct.End > DateTime.Now) {
+        @model beltexam.Models.BidViewModel
+        <form asp-controller="Store" asp-action="CreateBid" asp-route-num=@ViewBag.CurrentProduct.productid method="post">
+            
+            @if(@ViewBag.bidMore != null) {
+                <p>@ViewBag.bidMore</p>
+            }
+            @if(@ViewBag.notEnough != null) {
+                <p>@ViewBag.notEnough</p>
+            }
+            @if(@ViewBag.upBid != null) {
+                <p>@ViewBag.upBid</p>
+            }
+            <p><span asp-validation-for="Amount"></span></p>
+            <p><label asp-for="Amount">Bid Amount:</label>
+            <input asp-for="Amount"/></p>
+
+            <button type="submit">Bid On Me!</button>
+        </form>
+    }
+</body>
+</html>
